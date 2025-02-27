@@ -1,11 +1,16 @@
 ---
-- name: Deploy Scientific Calculator
+- name: Pull Docker Image from Docker Hub
   hosts: localhost
   remote_user: nitish
   become: false
   tasks:
 
-    - name: Pull Docker Image from Docker Hub
+    - name: Install Python Docker SDK
+      pip:
+        name: docker
+        executable: pip3
+
+    - name: Pull Docker Image
       docker_image:
         name: "nitish757/calculator"
         source: pull
@@ -14,11 +19,11 @@
     - name: Display Docker Pull Result
       debug:
         var: docker_pull_result
-      
+        
     - name: Start Docker service
       service:
         name: docker
         state: started
 
     - name: Running container
-      shell: docker run -it -d --name calculator nitish757/calculator /bin/bash
+      shell: docker run -it -d --name calculator nitish757/calculator/bin/bash
