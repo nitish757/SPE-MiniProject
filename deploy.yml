@@ -20,5 +20,5 @@
         name: docker
         state: started
 
-    - name: Run the Calculator Container
-      command: docker run -it -d --name calculator nitish757/calculator
+    - name: Running container
+      shell: docker run -it -d --name calculator nitish757/calculator /bin/bash
