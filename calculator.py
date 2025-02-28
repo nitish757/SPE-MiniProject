@@ -7,9 +7,6 @@ def square_root(x):
     return math.sqrt(x)
 
 def factorial(x):
-    if x < 0 or not x.is_integer():  
-        print("Error: Factorial is only defined for non-negative integers.")
-        return None
     return math.factorial(x)
 
 def natural_log(x):
