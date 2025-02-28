@@ -31,7 +31,7 @@ if __name__ == "__main__":
         print("5. Exit")
 
         choice = int(input("Enter choice: "))
-        if choice in [1, 2, 3, 4]:
+        if choice in [1, 2, 3, 4, 5]:
             num = float(input("Enter number: "))
             if choice == 1:
                 print("Result:", square_root(num))
@@ -42,7 +42,7 @@ if __name__ == "__main__":
             elif choice == 4:
                 num2 = float(input("Enter exponent: "))
                 print("Result:", power(num, num2))
-        elif choice==5:
-            break
+            elif choice == 5:
+                break
         else:
             print("Invalid choice")
