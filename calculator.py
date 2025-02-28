@@ -1,12 +1,21 @@
 import math
 
 def square_root(x):
+    if x < 0:
+        print("Error: Square root of a negative number is not defined in real numbers.")
+        return None
     return math.sqrt(x)
 
 def factorial(x):
+    if x < 0 or not x.is_integer():  
+        print("Error: Factorial is only defined for non-negative integers.")
+        return None
     return math.factorial(x)
 
 def natural_log(x):
+    if x <= 0:
+        print("Error: Natural logarithm is only defined for positive numbers.")
+        return None
     return math.log(x)
 
 def power(x, y):
